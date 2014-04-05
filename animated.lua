@@ -1,3 +1,11 @@
+-- Boilerplate to support localized strings if intllib mod is installed.
+local S
+if intllib then
+  S = intllib.Getter()
+else
+  S = function(s) return s end
+end
+
 -- Settings
 local default_speed	= 2.0
 
@@ -41,7 +49,7 @@ end
 
 -- node
 minetest.register_node("gemalde:node_animated_"..n.."", {
-	description = "Animation #"..n.."",
+	description = S("Animation #%s"):format(n),
 	drawtype = "signlike",
 	tiles = {
 		{
