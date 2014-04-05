@@ -1,0 +1,8 @@
+# Template
+
+### still.lua ###
+Picture #%s = 
+[gemalde] number is %s = 
+
+### animated.lua ###
+Animation #%s = 
