@@ -1,3 +1,11 @@
+-- Boilerplate to support localized strings if intllib mod is installed.
+local S
+if intllib then
+  S = intllib.Getter()
+else
+  S = function(s) return s end
+end
+
 -- Count the number of pictures.
 local function get_picture(number)
 	local filename	= minetest.get_modpath("gemalde").."/textures/gemalde_"..number..".png"
@@ -23,7 +31,7 @@ end
 
 -- node
 minetest.register_node("gemalde:node_"..n.."", {
-	description = "Picture #"..n.."",
+	description = S("Picture #%s"):format(n),
 	drawtype = "signlike",
 	tiles = {"gemalde_"..n..".png"},
 	visual_scale = 3.0,
@@ -59,7 +67,7 @@ minetest.register_node("gemalde:node_"..n.."", {
 			end
 		end
 
-		print("[gemalde] number is "..number.."")
+		print(S("[gemalde] number is %s"):format(number))
 		node.name = "gemalde:node_"..number..""
 		minetest.env:set_node(pos, node)
 	end,
