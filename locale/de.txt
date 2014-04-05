@@ -1,0 +1,8 @@
+# Translation by Xanthin
+
+### still.lua ###
+Picture #%s = Bild #%s
+[gemalde] number is %s = [gemalde] Bild Nummer %s
+
+### animated.lua ###
+Animation #%s = Animation #%s
